@@ -1,6 +1,5 @@
 import json
 import os
-import datetime
 
 PRICE_DATA = {
     1: 1,
@@ -18,8 +17,8 @@ PRICE_DATA = {
 }
 
 MEMO_FILE = "iron_bar/memo_bottom_up.json"
-# Verifica se o arquivo de memoização existe e carrega os dados
 
+# Verifica se o arquivo de memo existe e carrega os dados
 if os.path.exists(MEMO_FILE):
     try:
         with open(MEMO_FILE, 'r') as f:
@@ -49,8 +48,10 @@ def corte_barra_bottom_up(bar_size: int, prices: dict[int, int]):
             if i in prices and dp[j - i] + prices[i] > max_val:
                 max_val = dp[j - i] + prices[i]
                 solution[j] = solution[j - i] + [i]
+                
         dp[j] = max_val
-
+        print(solution)
+        
 
     # Resultado a ser armazenado
     resultado = {

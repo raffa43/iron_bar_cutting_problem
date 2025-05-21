@@ -13,5 +13,45 @@
       5
     ],
     "iteracoes": 55
+  },
+  "4": {
+    "lucro": 11,
+    "cortes": [
+      4
+    ],
+    "iteracoes": 10
+  },
+  "9": {
+    "lucro": 25,
+    "cortes": [
+      5,
+      4
+    ],
+    "iteracoes": 45
+  },
+  "8": {
+    "lucro": 22,
+    "cortes": [
+      5,
+      3
+    ],
+    "iteracoes": 36
+  },
+  "7": {
+    "lucro": 19,
+    "cortes": [
+      4,
+      3
+    ],
+    "iteracoes": 28
+  },
+  "13": {
+    "lucro": 36,
+    "cortes": [
+      5,
+      5,
+      3
+    ],
+    "iteracoes": 91
   }
 }

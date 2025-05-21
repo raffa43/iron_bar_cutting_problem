@@ -23,7 +23,6 @@ bar_size = int(input("Digite o tamanho da barra: "))
 start_time = datetime.datetime.now()
 resultado = corte_barra_bottom_up(bar_size, PRICE_DATA)
 print("\nResultado:", resultado)
-print(json.load(open(MEMO_FILE, 'r')))
 print("Duração:", datetime.datetime.now() - start_time)
 
 ## Teste secundario para comparação da velocidade
