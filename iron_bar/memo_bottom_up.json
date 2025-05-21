@@ -1,0 +1,17 @@
+{
+  "5": {
+    "lucro": 14,
+    "cortes": [
+      5
+    ],
+    "iteracoes": 15
+  },
+  "10": {
+    "lucro": 28,
+    "cortes": [
+      5,
+      5
+    ],
+    "iteracoes": 55
+  }
+}
