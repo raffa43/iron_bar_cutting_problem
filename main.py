@@ -1,3 +1,4 @@
+from dynamic_top_down import dynamic_top_down_solution
 from greedy import greedy_solution
 
 PRICE_DATA = {
@@ -15,8 +16,9 @@ PRICE_DATA = {
     12: 21,
 }
 
-
 if __name__ == "__main__":
+    print("Greedy Solution:")
+    greedy_result = greedy_solution(12, PRICE_DATA)
 
-    greedy_result = greedy_solution(6, PRICE_DATA)
-    print("Greedy result:", greedy_result)
+    print("\nDynamic Programming Top-Down Solution:")
+    dynamic_top_down_solution = dynamic_top_down_solution(12, PRICE_DATA)

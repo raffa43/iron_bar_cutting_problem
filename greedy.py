@@ -34,9 +34,9 @@ def greedy_solution(bar_size: int, price_data: dict[int, int]) -> list[int]:
         reverse=True,
     )
 
-    print("Pieces sorted by ratio:")
-    for piece_size, ratio in pieces_with_ratios:
-        print(f"Size: {piece_size}, Ratio: {ratio:.2f}")
+    # print("Pieces sorted by ratio:")
+    # for piece_size, ratio in pieces_with_ratios:
+    #    print(f"Size: {piece_size}, Ratio: {ratio:.2f}")
     cuts = solve_greedy(bar_size, pieces_with_ratios)
 
     print("Cuts: ", cuts)
