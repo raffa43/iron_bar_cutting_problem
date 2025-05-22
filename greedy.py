@@ -7,10 +7,9 @@ def solve_greedy(
 
     best_cut = None
     for piece_size, _ in sorted_pieces_with_ratios:
-        print(f"Trying piece size: {piece_size} with bar size: {bar_size}")
         if piece_size <= bar_size:
             best_cut = piece_size
-            
+
             break
 
     if best_cut is None:
@@ -41,6 +40,6 @@ def greedy_solution(bar_size: int, price_data: dict[int, int]) -> list[int]:
     #    print(f"Size: {piece_size}, Ratio: {ratio:.2f}")
     cuts = solve_greedy(bar_size, pieces_with_ratios)
 
-    print("Cuts: ", cuts)
-    print(f"Total profit: {sum(price_data[cut] for cut in cuts)}")
-    return cuts
+    # print("Cuts: ", cuts)
+    # print(f"Total profit: {sum(price_data[cut] for cut in cuts)}")
+    return {"cuts": cuts, "total_profit": sum(price_data[cut] for cut in cuts)}

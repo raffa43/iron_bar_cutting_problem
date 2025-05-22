@@ -53,5 +53,14 @@
       3
     ],
     "iteracoes": 91
+  },
+  "12": {
+    "lucro": 33,
+    "cortes": [
+      5,
+      4,
+      3
+    ],
+    "iteracoes": 78
   }
 }

@@ -8,10 +8,11 @@ def dynamic_top_down_solution(bar_size: int, price_data: dict[int, int]) -> list
     memo_profit = [_NOT_COMPUTED] * (bar_size + 1)
     memo_cut = [0] * (bar_size + 1)
 
-    memo_profit[0] = 0
-    memo_profit[1] = price_data.get(1)
+    total_recursive_calls = 0
 
     def solver(current_size: int) -> int:
+        nonlocal total_recursive_calls
+        total_recursive_calls += 1
         if current_size == 0:
             return 0
 
@@ -40,15 +41,19 @@ def dynamic_top_down_solution(bar_size: int, price_data: dict[int, int]) -> list
     remaining_len = bar_size
     while remaining_len > 0:
         cut_made = memo_cut[remaining_len]
+        remaining_len -= cut_made
         optimal_cuts.append(cut_made)
 
-        remaining_len -= cut_made
-
-    print(
-        f"Memoized profit table: {memo_profit}\n"
-        f"Memoized cut table: {memo_cut}\n"
-        f"Cuts: {optimal_cuts}\n"
-        f"Total profit: {max_total_profit}"
-    )
-
-    return optimal_cuts
+    # print(
+    #     f"Memoized profit table: {memo_profit}\n"
+    #     f"Memoized cut table: {memo_cut}\n"
+    #     f"Cuts: {optimal_cuts}\n"
+    #     f"Total profit: {max_total_profit}\n"
+    #     f"Total recursive calls: {total_recursive_calls}"
+    # )
+    return {
+        "cuts": optimal_cuts,
+        "total_profit": max_total_profit,
+        "total_recursive_calls": total_recursive_calls,
+    }
+    # return optimal_cuts
